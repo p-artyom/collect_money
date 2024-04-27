@@ -6,12 +6,10 @@ from rest_framework.serializers import ModelSerializer, SerializerMethodField
 from api.fields import Base64ImageField
 from money.models import Collect, Payment
 
-User = get_user_model()
-
 
 class UserSerializer(ModelSerializer):
     class Meta:
-        model = User
+        model = get_user_model()
         fields = (
             'first_name',
             'last_name',
